@@ -15,12 +15,19 @@
 /*********************************************************/
 
 .header {
-    // @extend %flex-center;
-
+    height: 63px;
     background-color: $color-bg-main;
 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); // DOESN'T WORK, DON'T KNOW WHY
+
+    @extend %flex-center;
+
+    // &__logo {
+    //     height: 44px;
+    // }
 
     &__title {
+        height: 44px;
         text-align: center;
 
         font-family: 'Shrikhand';
@@ -32,18 +39,73 @@
 /************************* MAIN **************************/
 /*********************************************************/
 
-section {
-    height: 200px;
-}
-
 .geoloc {
+    height: 50px;
     background-color: $color-bg-third;
+
+    @extend %flex-center;
+    column-gap: 17px;
+
+    &__icon {
+        font-size: 16px;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 500px;
+    }
 }
 
 .headlines {
+    // height: 287.5px;
     background-color: $color-bg-second;
+
+    text-align: center;
+
+    // @extend %flex-center;
+    // flex-direction: column;
+
+    &__main {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+
+        padding: 0px 39.5px;
+        padding-top: 39.5px;
+    }
+
+    &__secondary {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21px;
+
+        padding: 0px 30px;
+        padding-top: 18px;
+    }
+
+    &__button {
+        margin-top: 27px;
+        margin-bottom: 57px;
+    }
 }
 
+.main-button {
+    height: 50px;
+    width: 218px;
+
+    /* Style */
+    background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 25px;
+
+    /* Text */
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
 .fonctionnement {
     background-color: $color-bg-main;
 }
