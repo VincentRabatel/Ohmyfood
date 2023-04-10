@@ -1,0 +1,35 @@
+/*********************** VARIABLES ***********************/
+/*********************************************************/
+
+// Background colors
+$color-bg-main: #FFFFFF;
+$color-bg-second: #F6F6F6;
+$color-bg-third: #EAEAEA;
+$color-bg-footer: #353535;
+
+// Text colors
+$title-text-dark: #000000;
+$title-text-light: #FFFFFF;
+
+// 
+$color-green-light: #99E2D0;
+$color-green-dark: #008766;
+
+$color-blue-light: #89C8FA;
+$color-blue-dark: #003A68;
+$color-purple: #9356DC;
+
+
+/******************** PLACEHOLDERS ***********************/
+/*********************************************************/
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*********************** MIXINS **************************/
+/*********************************************************/
+

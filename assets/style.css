@@ -1,77 +1,53 @@
 /*********************** GENERAL *************************/
 /*********************************************************/
-
-:root {
-    --color-main-bg: #FFFFFF;
-
-    --color-gray-light: #F6F6F6;
-    --color-gray-dark: #EAEAEA;
-    --color-gray-very-dark: #353535;
-
-    --color-green-light: #99E2D0;
-    --color-green-dark: #008766;
-
-    --color-blue-light: #89C8FA;
-    --color-blue-dark: #003A68;
-    --color-purple: #9356DC;
-}
-
+/*********************** VARIABLES ***********************/
+/*********************************************************/
+/******************** PLACEHOLDERS ***********************/
+/*********************************************************/
+/*********************** MIXINS **************************/
+/*********************************************************/
 * {
-    margin: 0;
-    padding: 0;
-
-    font-family: 'Roboto', sans-serif;;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
 }
-
 
 /************************ HEADER *************************/
 /*********************************************************/
-
-header {
-    background-color: var(--color-main-bg);
+.header {
+  background-color: #FFFFFF;
 }
-
-.header-container {
-    height: 63px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 14px;
-    margin-bottom: 5px;
-}
-
-.header-logo {
-    height: 44px;
+.header__title {
+  text-align: center;
+  font-family: "Shrikhand";
+  font-size: 30px;
 }
 
 /************************* MAIN **************************/
 /*********************************************************/
-
 section {
-    height: 200px;
+  height: 200px;
 }
 
-.geolocalisation {
-    background-color: var(--color-gray-dark);
+.geoloc {
+  background-color: #EAEAEA;
 }
 
 .headlines {
-    background-color: var(--color-gray-light);
+  background-color: #F6F6F6;
 }
 
 .fonctionnement {
-    background-color: var(--color-main-bg);
+  background-color: #FFFFFF;
 }
 
 .restaurants {
-    background-color: var(--color-gray-light);
+  background-color: #F6F6F6;
 }
 
 /************************ FOOTER *************************/
 /*********************************************************/
-
 footer {
-    height: 200px;
-    background-color: var(--color-gray-very-dark);
-}
+  height: 200px;
+  background-color: #353535;
+}/*# sourceMappingURL=style.css.map */

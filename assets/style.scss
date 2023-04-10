@@ -1,0 +1,61 @@
+/*********************** GENERAL *************************/
+/*********************************************************/
+
+@import './_statics';
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto';
+}
+
+
+/************************ HEADER *************************/
+/*********************************************************/
+
+.header {
+    // @extend %flex-center;
+
+    background-color: $color-bg-main;
+
+
+    &__title {
+        text-align: center;
+
+        font-family: 'Shrikhand';
+        font-size: 30px;
+    }
+}
+
+
+/************************* MAIN **************************/
+/*********************************************************/
+
+section {
+    height: 200px;
+}
+
+.geoloc {
+    background-color: $color-bg-third;
+}
+
+.headlines {
+    background-color: $color-bg-second;
+}
+
+.fonctionnement {
+    background-color: $color-bg-main;
+}
+
+.restaurants {
+    background-color: $color-bg-second;
+}
+
+/************************ FOOTER *************************/
+/*********************************************************/
+
+footer {
+    height: 200px;
+    background-color: $color-bg-footer;
+}
