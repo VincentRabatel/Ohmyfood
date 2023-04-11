@@ -19,6 +19,7 @@ body {
 
 main {
     color: $text-dark;
+    background: red; // Debug
 }
 
 /*********************** COMMONS *************************/
@@ -26,7 +27,6 @@ main {
 
 .main-button {
     height: 50px;
-    // width: 218px;
 
     /* Style */
     background: $gradient-main;
@@ -103,13 +103,16 @@ main {
 
     text-align: center;
 
+    padding-top: 39.5px;
+    padding-bottom: 57px;
+
     &__main {
         font-size: 24px;
         font-weight: 700;
         line-height: 28px;
 
         padding: 0px 39.5px;
-        padding-top: 39.5px;
+
     }
 
     &__secondary {
@@ -123,7 +126,7 @@ main {
 
     &__button {
         margin-top: 27px;
-        margin-bottom: 57px;
+
     }
 }
 
@@ -132,8 +135,10 @@ main {
 .howto {
     background-color: $color-bg-main;
 
+    padding-top: 48px;
+    padding-bottom: 68px;
+
     &__title {
-        padding-top: 48px;
         padding-bottom: 26px;
     }
 
@@ -141,8 +146,6 @@ main {
         display: flex;
         flex-direction: column;
         row-gap: 25px;
-
-        margin-bottom: 68px;
     }
 
     // Rounded rectangles with howto steps //
@@ -202,7 +205,6 @@ main {
     background-color: $color-bg-second;
 
     &__title {
-        // padding-top: 54px;
         margin-bottom: 29px;
     }
 

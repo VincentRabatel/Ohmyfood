@@ -39,6 +39,7 @@ body {
 
 main {
   color: #000000;
+  background: red;
 }
 
 /*********************** COMMONS *************************/
@@ -104,13 +105,14 @@ main {
 .headlines {
   background-color: #F6F6F6;
   text-align: center;
+  padding-top: 39.5px;
+  padding-bottom: 57px;
 }
 .headlines__main {
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   padding: 0px 39.5px;
-  padding-top: 39.5px;
 }
 .headlines__secondary {
   font-size: 18px;
@@ -121,22 +123,21 @@ main {
 }
 .headlines__button {
   margin-top: 27px;
-  margin-bottom: 57px;
 }
 
 /************************ HOWTO **************************/
 .howto {
   background-color: #FFFFFF;
+  padding-top: 48px;
+  padding-bottom: 68px;
 }
 .howto__title {
-  padding-top: 48px;
   padding-bottom: 26px;
 }
 .howto__flex-container {
   display: flex;
   flex-direction: column;
   row-gap: 25px;
-  margin-bottom: 68px;
 }
 .howto__step {
   height: 72.38px;
