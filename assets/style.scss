@@ -10,6 +10,16 @@
     font-family: 'Roboto';
 }
 
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    color: $text-dark;
+}
 
 /*********************** COMMONS *************************/
 /*********************************************************/
@@ -29,7 +39,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: $text-light;
 
     &__text {
         padding: 0px 19px;
@@ -43,9 +53,12 @@
     padding: 0px 20px;
 }
 
+.logo-ohmyfood {
+    font-family: 'Shrikhand';
+}
+
 /************************ HEADER *************************/
 /*********************************************************/
-
 .header {
     height: 63px;
     background-color: $color-bg-main;
@@ -60,17 +73,14 @@
 
     &__title {
         height: 44px;
-        text-align: center;
-
-        font-family: 'Shrikhand';
         font-size: 30px;
+        text-align: center;
     }
 }
 
 
 /************************* MAIN **************************/
 /*********************************************************/
-
 .geoloc {
     height: 50px;
     background-color: $color-bg-third;
@@ -119,7 +129,6 @@
 
 
 /************************ HOWTO **************************/
-
 .howto {
     background-color: $color-bg-main;
 
@@ -186,7 +195,6 @@
 
 
 /********************* RESTAURANTS ***********************/
-
 .restaurants {
     padding-top: 54px;
     padding-bottom: 66px;
@@ -254,32 +262,49 @@
 
     }
 
-    &__card-icon.empty { // NOT EXACTLY THE SAME STYLE AS THE MOCK-UP
-        color: rgba(0, 0, 0, 0); // = empty
+    &__card-icon.empty { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 1px #101010;
     }
 
-    &__card-icon.purple { // NOT EXACTLY THE SAME STYLE AS THE MOCK-UP
-        background: $gradient-main;
+    &__card-icon.purple { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
+        background: $gradient-main-reverse;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: none;
-
-        // /* Set the background color */
-        // background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
-        // /* Mask the color to the text, and remove the rest  */
-        // -webkit-background-clip: text;
-        // /* Make the text fill color value transparent so the masked background color comes through */
-        // -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: none; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
     }
 }
 
 
-
 /************************ FOOTER *************************/
 /*********************************************************/
-
-footer {
-    height: 200px;
+.footer {
+    color: $text-light;
     background-color: $color-bg-footer;
+
+    padding: 22px 25px;
+
+    &__title {
+        font-size: 18px;
+
+        margin-bottom: 22px;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    &__line {
+        @extend %flex-justify-start;
+    }
+
+    &__icon {
+        font-size: 13px;
+        width: 22px;
+    }
 }

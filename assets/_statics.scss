@@ -8,8 +8,8 @@ $color-bg-third: #EAEAEA;
 $color-bg-footer: #353535;
 
 // Text colors
-$title-text-dark: #000000;
-$title-text-light: #FFFFFF;
+$text-dark: #000000;
+$text-light: #FFFFFF;
 
 // Howto colors
 $color-howto-main: #9356DC;
@@ -24,6 +24,7 @@ $color-blue-dark: #003A68;
 
 // Gradients
 $gradient-main: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+$gradient-main-reverse: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 123.93%);
 
 /******************** PLACEHOLDERS ***********************/
 /*********************************************************/

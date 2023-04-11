@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.howto__step {
+.footer-nav__line, .howto__step {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -28,6 +28,17 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto";
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main {
+  color: #000000;
 }
 
 /*********************** COMMONS *************************/
@@ -56,6 +67,10 @@
   padding: 0px 20px;
 }
 
+.logo-ohmyfood {
+  font-family: "Shrikhand";
+}
+
 /************************ HEADER *************************/
 /*********************************************************/
 .header {
@@ -65,9 +80,8 @@
 }
 .header__title {
   height: 44px;
-  text-align: center;
-  font-family: "Shrikhand";
   font-size: 30px;
+  text-align: center;
 }
 
 /************************* MAIN **************************/
@@ -206,11 +220,11 @@
   padding-right: 25px;
 }
 .restaurants__card-icon.empty {
-  color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #101010;
 }
 .restaurants__card-icon.purple {
-  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 123.93%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: none;
@@ -218,7 +232,24 @@
 
 /************************ FOOTER *************************/
 /*********************************************************/
-footer {
-  height: 200px;
+.footer {
+  color: #FFFFFF;
   background-color: #353535;
+  padding: 22px 25px;
+}
+.footer__title {
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer-nav__icon {
+  font-size: 13px;
+  width: 22px;
 }/*# sourceMappingURL=style.css.map */
