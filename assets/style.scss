@@ -63,8 +63,8 @@ main {
     height: 63px;
     background-color: $color-bg-main;
 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); // DOESN'T WORK, DON'T KNOW WHY
-
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1;
     @extend %flex-center;
 
     // &__logo {
