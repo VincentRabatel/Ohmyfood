@@ -19,7 +19,7 @@
     // width: 218px;
 
     /* Style */
-    background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+    background: $gradient-main;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 25px;
@@ -37,8 +37,10 @@
 }
 
 .section-title {
-    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 700;
 
+    padding: 0px 20px;
 }
 
 /************************ HEADER *************************/
@@ -122,8 +124,8 @@
     background-color: $color-bg-main;
 
     &__title {
-        margin-top: 48px;
-        margin-bottom: 26px;
+        padding-top: 48px;
+        padding-bottom: 26px;
     }
 
     &__flex-container {
@@ -134,7 +136,7 @@
         margin-bottom: 68px;
     }
 
-    // Rounded rectangles with howto steps 
+    // Rounded rectangles with howto steps //
     &__step {
         @extend %flex-justify-start;
 
@@ -186,10 +188,13 @@
 /********************* RESTAURANTS ***********************/
 
 .restaurants {
+    padding-top: 54px;
+    padding-bottom: 66px;
+
     background-color: $color-bg-second;
 
     &__title {
-        margin-top: 54px;
+        // padding-top: 54px;
         margin-bottom: 29px;
     }
 
@@ -198,9 +203,78 @@
         flex-direction: column;
         row-gap: 18px;
 
-        margin-bottom: 6px;
+        padding: 0px 18px;
+    }
+
+    // Restaurants cards //
+    &__card {
+        height: 251px;
+    
+        border-radius: 15px;
+        background-color: $color-bg-main;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &__card-img {
+        height: 70%;
+        border-radius: 15px 15px 0px 0px;
+
+        object-fit: cover;
+    }
+
+    &__card-content {
+        height: 30%;
+        @extend %flex-space-between;
+    }
+
+    &__card-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+        padding-left: 13px;
+    }
+
+    &__card-title {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__card-location {
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    &__card-icon {
+        font-size: 22px;
+        padding-right: 25px;
+
+    }
+
+    &__card-icon.empty { // NOT EXACTLY THE SAME STYLE AS THE MOCK-UP
+        color: rgba(0, 0, 0, 0); // = empty
+        -webkit-text-stroke: 1px #101010;
+    }
+
+    &__card-icon.purple { // NOT EXACTLY THE SAME STYLE AS THE MOCK-UP
+        background: $gradient-main;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: none;
+
+        // /* Set the background color */
+        // background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+        // /* Mask the color to the text, and remove the rest  */
+        // -webkit-background-clip: text;
+        // /* Make the text fill color value transparent so the masked background color comes through */
+        // -webkit-text-fill-color: transparent;
     }
 }
+
+
 
 /************************ FOOTER *************************/
 /*********************************************************/

@@ -16,6 +16,12 @@
   justify-content: flex-start;
 }
 
+.restaurants__card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*********************** MIXINS **************************/
 /*********************************************************/
 * {
@@ -45,7 +51,9 @@
 }
 
 .section-title {
-  padding-left: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0px 20px;
 }
 
 /************************ HEADER *************************/
@@ -106,8 +114,8 @@
   background-color: #FFFFFF;
 }
 .howto__title {
-  margin-top: 48px;
-  margin-bottom: 26px;
+  padding-top: 48px;
+  padding-bottom: 26px;
 }
 .howto__flex-container {
   display: flex;
@@ -148,17 +156,64 @@
 
 /********************* RESTAURANTS ***********************/
 .restaurants {
+  padding-top: 54px;
+  padding-bottom: 66px;
   background-color: #F6F6F6;
 }
 .restaurants__title {
-  margin-top: 54px;
   margin-bottom: 29px;
 }
 .restaurants__flex-container {
   display: flex;
   flex-direction: column;
   row-gap: 18px;
-  margin-bottom: 6px;
+  padding: 0px 18px;
+}
+.restaurants__card {
+  height: 251px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.restaurants__card-img {
+  height: 70%;
+  border-radius: 15px 15px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.restaurants__card-content {
+  height: 30%;
+}
+.restaurants__card-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  padding-left: 13px;
+}
+.restaurants__card-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.restaurants__card-location {
+  font-size: 17px;
+  font-weight: 300;
+}
+.restaurants__card-icon {
+  font-size: 22px;
+  padding-right: 25px;
+}
+.restaurants__card-icon.empty {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1px #101010;
+}
+.restaurants__card-icon.purple {
+  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: none;
 }
 
 /************************ FOOTER *************************/
