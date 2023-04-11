@@ -11,6 +11,36 @@
 }
 
 
+/*********************** COMMONS *************************/
+/*********************************************************/
+
+.main-button {
+    height: 50px;
+    // width: 218px;
+
+    /* Style */
+    background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 25px;
+
+    /* Text */
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+
+    &__text {
+        padding: 0px 19px;
+    }
+}
+
+.section-title {
+    padding-left: 20px;
+
+}
+
 /************************ HEADER *************************/
 /*********************************************************/
 
@@ -57,13 +87,9 @@
 }
 
 .headlines {
-    // height: 287.5px;
     background-color: $color-bg-second;
 
     text-align: center;
-
-    // @extend %flex-center;
-    // flex-direction: column;
 
     &__main {
         font-size: 24px;
@@ -89,29 +115,91 @@
     }
 }
 
-.main-button {
-    height: 50px;
-    width: 218px;
 
-    /* Style */
-    background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border: none;
-    border-radius: 25px;
+/************************ HOWTO **************************/
 
-    /* Text */
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #FFFFFF;
-}
-.fonctionnement {
+.howto {
     background-color: $color-bg-main;
+
+    &__title {
+        margin-top: 48px;
+        margin-bottom: 26px;
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+        margin-bottom: 68px;
+    }
+
+    // Rounded rectangles with howto steps 
+    &__step {
+        @extend %flex-justify-start;
+
+        height: 72.38px;
+        
+        margin: 0px 20px 0px 32px;
+
+        border-radius: 20px;
+        background-color: $color-bg-second;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    &__step-index {
+        width: 24px;
+        height: 24px;
+
+        position: relative;
+        left: -12px;
+
+        border-radius: 24px;
+        background-color: $color-howto-main;
+
+        @extend %flex-center;
+
+        font-size: 15px;
+        color: $color-bg-main;
+    }
+
+    &__step-icon {
+        margin-left: 13px;
+
+        font-size: 20px;
+        color: $color-howto-secondary;
+
+        &--purple {
+            color: $color-howto-main;
+        }
+    }
+
+    &__step-text {
+        margin-left: 27px;
+
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
+
+
+/********************* RESTAURANTS ***********************/
 
 .restaurants {
     background-color: $color-bg-second;
+
+    &__title {
+        margin-top: 54px;
+        margin-bottom: 29px;
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+
+        margin-bottom: 6px;
+    }
 }
 
 /************************ FOOTER *************************/

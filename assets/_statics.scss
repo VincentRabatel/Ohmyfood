@@ -11,13 +11,17 @@ $color-bg-footer: #353535;
 $title-text-dark: #000000;
 $title-text-light: #FFFFFF;
 
+// Howto colors
+$color-howto-main: #9356DC;
+$color-howto-secondary: #7E7E7E;
+
 // 
 $color-green-light: #99E2D0;
 $color-green-dark: #008766;
 
 $color-blue-light: #89C8FA;
 $color-blue-dark: #003A68;
-$color-purple: #9356DC;
+
 
 /******************** PLACEHOLDERS ***********************/
 /*********************************************************/
@@ -28,6 +32,17 @@ $color-purple: #9356DC;
     justify-content: center;
 }
 
+%flex-justify-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+%flex-justify-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 /*********************** MIXINS **************************/
 /*********************************************************/
