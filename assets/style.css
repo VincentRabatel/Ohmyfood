@@ -4,7 +4,7 @@
 /*********************************************************/
 /******************** PLACEHOLDERS ***********************/
 /*********************************************************/
-.howto__step-index, .geoloc, .header {
+.restaurants__notif-bloc, .howto__step-index, .geoloc, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,6 @@ body {
 
 main {
   color: #000000;
-  background: red;
 }
 
 /*********************** COMMONS *************************/
@@ -190,9 +189,10 @@ main {
   border-radius: 15px;
   background-color: #FFFFFF;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
 }
 .restaurants__card-img {
   height: 70%;
@@ -230,6 +230,21 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: none;
+}
+.restaurants__notif-bloc {
+  height: 29px;
+  border-radius: 2px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 1;
+  background-color: #99E2D0;
+}
+.restaurants__notif-text {
+  padding: 0px 11px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
 }
 
 /************************ FOOTER *************************/
