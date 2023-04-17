@@ -28,11 +28,7 @@ main {
 .main-button {
     height: 50px;
 
-    /* Style */
-    background: $gradient-main;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border: none;
-    border-radius: 25px;
+    cursor: pointer;
 
     /* Text */
     text-align: center;
@@ -43,6 +39,25 @@ main {
 
     &__text {
         padding: 0px 19px;
+    }
+
+    /* Style */
+    transform: scale(1);
+    background-image: $gradient-main; // gradient transitions not supported
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);   
+    border: none;
+    border-radius: 25px;
+    
+    transition: transform 200ms, background-image 400ms, box-shadow 400ms;
+
+    &:hover {
+        transform: scale(1.05);
+        background-image: $gradient-main--hover; // gradient transitions not supported
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 }
 
@@ -126,7 +141,6 @@ main {
 
     &__button {
         margin-top: 27px;
-
     }
 }
 
@@ -264,21 +278,51 @@ main {
 
     &__card-icon {
         font-size: 22px;
-        padding-right: 25px;
+        font-weight: 400;
 
+        margin: 20px;
+
+        transform: scale(1);
+
+        color: $color-bg-main;
+
+        -webkit-text-stroke: 1px #000; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
+        
+        transition: transform 200ms;
+
+        &:hover { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
+            transform: scale(1.2);
+
+            color: #ffffff00;
+
+            background: $gradient-main-reverse--hover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            -webkit-text-stroke: 0;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        /* SAVE */
+
+        // &.empty { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
+        //     -webkit-text-fill-color: transparent;
+        //     -webkit-text-stroke: 1px #101010;
+        // }
+
+        // &.purple { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
+        //     background: $gradient-main-reverse--hover;
+        //     -webkit-background-clip: text;
+        //     -webkit-text-fill-color: transparent;
+        //     -webkit-text-stroke: none; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
+        // }
+
+        /* SAVE */
     }
 
-    &__card-icon.empty { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px #101010;
-    }
-
-    &__card-icon.purple { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
-        background: $gradient-main-reverse;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: none; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
-    }
 
     // New restaurant notification //
     &__notif-bloc {

@@ -24,7 +24,13 @@ $color-blue-dark: #003A68;
 
 // Gradients
 $gradient-main: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
-$gradient-main-reverse: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 123.93%);
+$gradient-main--hover: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+
+$gradient-main-reverse: linear-gradient(180deg, #9356DC00 -11.44%, #FF79DA00 123.93%);
+$gradient-main-reverse--hover: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 123.93%);
+
+// linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+// linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 
 
 /******************** PLACEHOLDERS ***********************/
