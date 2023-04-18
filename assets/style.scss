@@ -10,11 +10,16 @@
     font-family: 'Roboto';
 }
 
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     margin: 0;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    display: flex;
+    flex-direction: column; // Reminder, this is needed for the z-index of the header box-shadow
 }
 
 main {
@@ -108,11 +113,11 @@ main {
 /************************ HEADER *************************/
 /*********************************************************/
 .header {
+    z-index: 1;
     height: 63px;
     background-color: $color-bg-main;
-    z-index: 2;
 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 
     @extend %flex-center;
 
@@ -138,10 +143,10 @@ main {
 /************************* MAIN **************************/
 /*********************************************************/
 .geoloc {
+    z-index: 0;
     height: 50px;
     background-color: $color-bg-third;
-    background-color: rgba(0, 0, 0, 0); // debug for header drop shadow
-    z-index: 0;
+    //background-color: rgba(0, 0, 0, 0); // debug for header drop shadow
     
     @extend %flex-center;
     column-gap: 17px;
@@ -361,50 +366,35 @@ main {
     }
 
     &__card-icon {
-        font-size: 22px;
-        font-weight: 400;
-
         margin: 20px;
+        font-size: 22px;
+
+        --fa-style: 400; // Font Awesome regular style
 
         cursor: pointer;
 
+        /* SCALE TRANSITIONS */
         transform: scale(1);
-        color: $color-bg-main;
-        -webkit-text-stroke: 1px #000; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
-        
-        transition: transform 200ms;
+        transition: transform 100ms;
 
         &:hover {
-            transform: scale(1.2);
-            color: #ffffff00;
-
-            background: $gradient-main-reverse--hover;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            -webkit-text-stroke: 0;
+            transform: scale(1.1);
         }
 
         &:active {
             transform: scale(0.95);
         }
 
-        /* SAVE */
+        /* COLOR TRANSITIONS */
+        &:hover {
+            --fa-style: 900; // Font Awesome solid style
 
-        // &.empty { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
-        //     -webkit-text-fill-color: transparent;
-        //     -webkit-text-stroke: 1px #101010;
-        // }
-
-        // &.purple { // NOT EXACTLY THE SAME SHAPE AS THE MOCK-UP
-        //     background: $gradient-main-reverse--hover;
-        //     -webkit-background-clip: text;
-        //     -webkit-text-fill-color: transparent;
-        //     -webkit-text-stroke: none; // SOME RESEARCHES TO DO AROUND THIS '-webkit'
-        // }
-
-        /* SAVE */
+            background: $gradient-main--hover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
+
 
 
     // New restaurant notification //
@@ -429,7 +419,6 @@ main {
         color: $color-notif-dark;
     }
 }
-
 
 /************************ FOOTER *************************/
 /*********************************************************/

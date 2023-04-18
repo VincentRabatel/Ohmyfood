@@ -30,8 +30,16 @@
   font-family: "Roboto";
 }
 
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -113,10 +121,10 @@ main {
 /************************ HEADER *************************/
 /*********************************************************/
 .header {
+  z-index: 1;
   height: 63px;
   background-color: #FFFFFF;
-  z-index: 2;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 769px) {
   .header { /* Media query for tablets */
@@ -139,10 +147,9 @@ main {
 /************************* MAIN **************************/
 /*********************************************************/
 .geoloc {
+  z-index: 0;
   height: 50px;
   background-color: #EAEAEA;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 0;
   -moz-column-gap: 17px;
        column-gap: 17px;
 }
@@ -324,27 +331,26 @@ main {
   font-weight: 300;
 }
 .restaurants__card-icon {
-  font-size: 22px;
-  font-weight: 400;
   margin: 20px;
+  font-size: 22px;
+  --fa-style: 400;
   cursor: pointer;
+  /* SCALE TRANSITIONS */
   transform: scale(1);
-  color: #FFFFFF;
-  -webkit-text-stroke: 1px #000;
-  transition: transform 200ms;
-  /* SAVE */
-  /* SAVE */
+  transition: transform 100ms;
+  /* COLOR TRANSITIONS */
 }
 .restaurants__card-icon:hover {
-  transform: scale(1.2);
-  color: rgba(255, 255, 255, 0);
-  background: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0;
+  transform: scale(1.1);
 }
 .restaurants__card-icon:active {
   transform: scale(0.95);
+}
+.restaurants__card-icon:hover {
+  --fa-style: 900;
+  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .restaurants__notif-bloc {
   height: 29px;
