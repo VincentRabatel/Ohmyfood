@@ -21,42 +21,69 @@ main {
     color: $text-dark;
 }
 
+
 /*********************** COMMONS *************************/
 /*********************************************************/
 
 .main-button {
     height: 50px;
-
     cursor: pointer;
 
-    /* Text */
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: $text-light;
+    /* SCALE TRANSITIONS */
+    transition: transform 200ms;
 
-    &__text {
-        padding: 0px 19px;
+    &:hover {
+        transform: scale(1.005);
     }
 
-    /* Style */
+    &:active {
+        transform: scale(0.98);
+    }
+
+    /* COLOR TRANSITIONS */
+    /* Default style */
+    z-index: 1;
     transform: scale(1);
-    background-image: $gradient-main; // gradient transitions not supported
+    background-image: $gradient-main;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);   
     border: none;
     border-radius: 25px;
     
-    transition: transform 200ms, background-image 400ms, box-shadow 400ms;
+    /* Create a second bg as a ::after pseudo-element */
+    &::after {
+        /* The property content: is needed, but left empty*/
+        content: "";
 
-    &:hover {
-        transform: scale(1.05);
-        background-image: $gradient-main--hover; // gradient transitions not supported
+        /* Setup the pseudo-element exactly on top*/
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+
+        /* Hover styling */
+        z-index: -1;
+        background-image: $gradient-main--hover;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+        border: none;
+        border-radius: 25px;
+
+        /* Transition */
+        transition: opacity 400ms;
+        opacity: 0;
     }
 
-    &:active {
-        transform: scale(0.95);
+    /* Show the second bg on hover */
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: $text-light;
+        padding: 0px 19px;
     }
 }
 

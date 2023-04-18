@@ -43,30 +43,54 @@ main {
 .main-button {
   height: 50px;
   cursor: pointer;
-  /* Text */
-  text-align: center;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #FFFFFF;
-  /* Style */
+  /* SCALE TRANSITIONS */
+  transition: transform 200ms;
+  /* COLOR TRANSITIONS */
+  /* Default style */
+  z-index: 1;
   transform: scale(1);
   background-image: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 25px;
-  transition: transform 200ms, background-image 400ms, box-shadow 400ms;
-}
-.main-button__text {
-  padding: 0px 19px;
+  /* Create a second bg as a ::after pseudo-element */
+  /* Show the second bg on hover */
 }
 .main-button:hover {
-  transform: scale(1.05);
-  background-image: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  transform: scale(1.005);
 }
 .main-button:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
+}
+.main-button::after {
+  /* The property content: is needed, but left empty*/
+  content: "";
+  /* Setup the pseudo-element exactly on top*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Hover styling */
+  z-index: -1;
+  background-image: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  border: none;
+  border-radius: 25px;
+  /* Transition */
+  transition: opacity 400ms;
+  opacity: 0;
+}
+.main-button:hover::after {
+  opacity: 1;
+}
+.main-button__text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  padding: 0px 19px;
 }
 
 .section-title {
