@@ -26,6 +26,11 @@ main {
     color: $text-dark;
 }
 
+a {
+    color: $text-dark;
+    text-decoration: none;
+}
+
 
 /*********************** COMMONS *************************/
 /*********************************************************/
@@ -333,7 +338,12 @@ main {
         @media (min-width: 769px) { /* Media query for tablets */
             width: 46%;
         }
-        
+
+        transition: transform 200ms, box-shadow 400ms;
+        &:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        }
     }
 
     &__card-img {

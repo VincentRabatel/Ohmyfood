@@ -46,6 +46,11 @@ main {
   color: #000000;
 }
 
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
 /*********************** COMMONS *************************/
 /*********************************************************/
 .main-button {
@@ -301,11 +306,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 200ms, box-shadow 400ms;
 }
 @media (min-width: 769px) {
   .restaurants__card { /* Media query for tablets */
     width: 46%;
   }
+}
+.restaurants__card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
 }
 .restaurants__card-img {
   height: 70%;
