@@ -16,7 +16,7 @@
   justify-content: flex-start;
 }
 
-.restaurants__card-content {
+.menu__meal-card, .menu__title-container, .restaurants__card-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,6 @@ a {
   transition: transform 200ms;
   /* COLOR TRANSITIONS */
   /* Default style */
-  z-index: 1;
   transform: scale(1);
   background-image: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -376,6 +375,92 @@ a {
   font-size: 14px;
   font-weight: 500;
   color: #008766;
+}
+
+/****************** RESTAURANTS PAGES ********************/
+.restaurant-bg img {
+  width: 100%;
+  height: 275px;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+
+.menu {
+  width: 100%;
+  background-color: #F6F6F6;
+  border-radius: 40px 40px 0px 0px;
+  margin-top: 220px;
+}
+.menu__title-container {
+  padding: 32px 17px 42px 17px;
+}
+.menu__title-txt {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Shrikhand";
+}
+.menu__like-icon {
+  margin: 0;
+  padding: 0;
+}
+.menu__section {
+  padding: 0px 13px 40px 13px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.menu__section-title {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.menu__section-title::after {
+  content: "";
+  height: 3px;
+  width: 40px;
+  margin-top: 9px;
+  display: block;
+  background-color: #99E2D0;
+}
+.menu__meal-card {
+  align-items: flex-end;
+  padding-left: 15px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+}
+.menu__meal-card h4 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+}
+.menu__meal-card h5 {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+}
+.menu__meal-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 4px;
+}
+.menu__meal-card-price {
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu__button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu__button {
+  width: 186px;
 }
 
 /************************ FOOTER *************************/
