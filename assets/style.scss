@@ -506,11 +506,6 @@ a {
     &__meal-card {  
         @extend %flex-space-between;
         align-items: flex-end;
-    
-        padding-left: 15px;
-        padding-right: 16px;
-        padding-top: 12px;
-        padding-bottom: 12px;
 
         background-color: $color-bg-main;
         border-radius: 15px;
@@ -527,6 +522,38 @@ a {
             font-weight: 300;
             line-height: 18px;
         }
+
+        .menu__meal-card-notif {
+            content: "";
+            width: 0px;
+            height: 69px;
+            @extend %flex-center;
+            border-radius: 0px 15px 15px 0px;
+            background-color: $color-notif-light;
+            background-color: #99E2D0;
+
+            transition: width 400ms;
+        }
+
+        .menu__meal-card-notif-icon {
+            transform: scale(0);
+
+            font-size: 20px;
+            -webkit-text-fill-color: $color-bg-main;
+            color: $color-notif-light;
+
+            transition: transform 400ms;
+        }
+
+        &:hover {
+            .menu__meal-card-notif {
+                width: 59px;
+            }
+
+            .menu__meal-card-notif-icon {
+                transform: scale(1);
+            }
+        }
     }
 
     &__meal-card-content {
@@ -534,11 +561,23 @@ a {
         flex-direction: column;
         justify-content: center;
         row-gap: 4px;
+
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+    }
+
+    &__meal-card-price-container {
+        display: flex;
+        flex-direction: row;
+        align-items: end;
     }
 
     &__meal-card-price {
         font-size: 18px;
         font-weight: 500;
+        padding-right: 16px;
+        padding-bottom: 12px;
     }
 
     &__button-container {
@@ -551,6 +590,8 @@ a {
         width: 186px;
     }
 }
+
+
 
 
 /************************ FOOTER *************************/
