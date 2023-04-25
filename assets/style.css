@@ -41,7 +41,6 @@ main {
 }
 
 a {
-  color: #000000;
   text-decoration: none;
 }
 
@@ -316,6 +315,7 @@ a {
 }
 .restaurants__card {
   height: 251px;
+  color: #000000;
   border-radius: 15px;
   background-color: #FFFFFF;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -584,6 +584,9 @@ a {
 .footer-nav__icon {
   font-size: 13px;
   width: 22px;
+}
+.footer-nav__link {
+  color: #FFFFFF;
 }
 
 @media (min-width: 769px) { /* Media query for tablets */ }

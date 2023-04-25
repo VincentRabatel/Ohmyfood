@@ -27,7 +27,6 @@ main {
 }
 
 a {
-    color: $text-dark;
     text-decoration: none;
 }
 
@@ -335,7 +334,8 @@ a {
     // Restaurants cards //
     &__card {
         height: 251px;
-        
+
+        color: $text-dark;
         border-radius: 15px;
         background-color: $color-bg-main;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -660,6 +660,10 @@ a {
     &__icon {
         font-size: 13px;
         width: 22px;
+    }
+
+    &__link {
+        color: $text-light;
     }
 }
 
