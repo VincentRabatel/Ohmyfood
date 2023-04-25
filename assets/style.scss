@@ -39,20 +39,14 @@ a {
     height: 50px;
     cursor: pointer;
 
-    /* SCALE TRANSITIONS */
-    transition: transform 200ms;
+    /* SCALE TRANSITION */
+    transform: scale(1);
+    @include hover-scale(1.01, 200ms);
+    @include active-scale(0.98, 200ms);
 
-    &:hover {
-        transform: scale(1.005);
-    }
-
-    &:active {
-        transform: scale(0.98);
-    }
 
     /* COLOR TRANSITIONS */
     /* Default style */
-    transform: scale(1);
     background-image: $gradient-main;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);   
     border: none;
@@ -92,7 +86,6 @@ a {
         font-size: 16px;
         line-height: 19px;
         color: $text-light;
-        padding: 0px 19px;
     }
 }
 
@@ -111,6 +104,7 @@ a {
 }
 
 .logo-ohmyfood {
+    font-weight: 400;
     font-family: 'Shrikhand';
 }
 
@@ -130,6 +124,23 @@ a {
         height: 96px;
     }
     
+    &__arrow {
+        position: absolute;
+        top: 24px; left: 23px;
+
+        color: #353535;
+        font-size: 18px;
+
+        /* SCALE TRANSITION */
+        transform: scale(1);
+        @include hover-scale(1.2, 200ms);
+        @include active-scale(0.9, 200ms);
+
+        @media (min-width: 769px) { /* Media query for tablets */
+            top: 40px;
+        }
+    }
+
     &__title {
         height: 44px;
         font-size: 30px;
@@ -203,6 +214,7 @@ a {
     }
 
     &__button {
+        width: 218px;
         margin-top: 27px;
     }
 }
@@ -329,7 +341,7 @@ a {
         background-color: $color-bg-main;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 
-        position: relative; // // Reminder, this is needed for notification's position: absolute;
+        position: relative; // Reminder, this is needed for notification's position: absolute;
 
         display: flex;
         flex-direction: column;
@@ -378,23 +390,14 @@ a {
     &__card-icon {
         margin: 20px;
         font-size: 22px;
-
-        --fa-style: 400; // Font Awesome regular style
-
         cursor: pointer;
 
-        /* SCALE TRANSITIONS */
+        /* SCALE TRANSITION */
         transform: scale(1);
-        transition: transform 100ms;
-        
-        &:hover {
-            transform: scale(1.1);
-        }
+        @include hover-scale(1.1, 200ms);
+        @include active-scale(0.95, 200ms);
 
-        &:active {
-            transform: scale(0.95);
-        }
-
+        --fa-style: 400; // Font Awesome regular style
         /* COLOR TRANSITIONS */
         &:hover {
             --fa-style: 900; // Font Awesome solid style
@@ -405,14 +408,12 @@ a {
         }
     }
 
-
-
     // New restaurant notification //
     &__notif-bloc {
         height: 29px;
         border-radius: 2px;
 
-        position: absolute; // Reminder, the parent bloc need position: relative;
+        position: absolute; // Reminder: the parent bloc need position: relative;
         top: 13px; right: 13px;
 
         @extend %flex-center;
@@ -432,11 +433,6 @@ a {
 
 
 /****************** RESTAURANTS PAGES ********************/
-
-.restaurant-bg {
-
-}
-
 .restaurant-bg img{
     width: 100%;
     height: 275px;
@@ -469,7 +465,6 @@ a {
         font-size: 28px;
         font-weight: 400;
         font-family: 'Shrikhand';
-        line-height: 40.82px;
     }
 
     &__like-icon {
@@ -494,7 +489,6 @@ a {
     &__section-title {
         font-size: 16px;
         font-weight: 300;
-        //line-height: 18.75px;
         text-transform: uppercase;
 
         &::after {
