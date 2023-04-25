@@ -64,7 +64,7 @@ a {
   /* Show the second bg on hover */
 }
 .main-button:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 .main-button:active {
   transform: scale(0.98);
@@ -471,6 +471,7 @@ a {
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 200ms;
 }
 .meal-card h4 {
   font-size: 18px;
@@ -516,6 +517,9 @@ a {
   -webkit-text-fill-color: #FFFFFF;
   color: #99E2D0;
   transition: transform 400ms;
+}
+.meal-card:hover {
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.2);
 }
 .meal-card:hover .meal-card__notif {
   width: 59px;

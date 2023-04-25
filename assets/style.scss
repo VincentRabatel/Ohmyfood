@@ -41,7 +41,7 @@ a {
 
     /* SCALE TRANSITION */
     transform: scale(1);
-    @include hover-scale(1.01, 200ms);
+    @include hover-scale(1.02, 200ms);
     @include active-scale(0.98, 200ms);
 
 
@@ -580,7 +580,11 @@ a {
         transition: transform 400ms;
     }
 
+    transition: box-shadow 200ms;
+
     &:hover {
+        box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.2);
+
         .meal-card__notif {
             width: 59px;
         }
