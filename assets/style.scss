@@ -509,9 +509,7 @@ a {
         }
     }
 
-    &__meal-card {
-        //height: 69px;
-    
+    &__meal-card {  
         @extend %flex-space-between;
         align-items: flex-end;
     
