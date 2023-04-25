@@ -1,6 +1,6 @@
 /*********************** GENERAL *************************/
 /*********************************************************/
-.menu__meal-card .menu__meal-card-notif, .restaurants__notif-bloc, .howto__step-index, .geoloc, .header {
+.meal-card__notif, .restaurants__notif-bloc, .howto__step-index, .geoloc, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
   justify-content: flex-start;
 }
 
-.menu__meal-card, .menu__title-container, .restaurants__card-content {
+.meal-card, .menu__title-container, .restaurants__card-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -456,45 +456,33 @@ a {
   display: block;
   background-color: #99E2D0;
 }
-.menu__meal-card {
+.menu__button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu__button {
+  width: 186px;
+}
+
+.meal-card {
   align-items: flex-end;
+  cursor: pointer;
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
 }
-.menu__meal-card h4 {
+.meal-card h4 {
   font-size: 18px;
   font-weight: 500;
   line-height: 21px;
 }
-.menu__meal-card h5 {
+.meal-card h5 {
   font-size: 15px;
   font-weight: 300;
   line-height: 18px;
 }
-.menu__meal-card .menu__meal-card-notif {
-  content: "";
-  width: 0px;
-  height: 69px;
-  border-radius: 0px 15px 15px 0px;
-  background-color: #99E2D0;
-  background-color: #99E2D0;
-  transition: width 400ms;
-}
-.menu__meal-card .menu__meal-card-notif-icon {
-  transform: scale(0);
-  font-size: 20px;
-  -webkit-text-fill-color: #FFFFFF;
-  color: #99E2D0;
-  transition: transform 400ms;
-}
-.menu__meal-card:hover .menu__meal-card-notif {
-  width: 59px;
-}
-.menu__meal-card:hover .menu__meal-card-notif-icon {
-  transform: scale(1);
-}
-.menu__meal-card-content {
+.meal-card__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -503,24 +491,37 @@ a {
   padding-bottom: 12px;
   padding-left: 15px;
 }
-.menu__meal-card-price-container {
+.meal-card__price-container {
   display: flex;
   flex-direction: row;
   align-items: end;
 }
-.menu__meal-card-price {
+.meal-card__price {
   font-size: 18px;
   font-weight: 500;
   padding-right: 16px;
   padding-bottom: 12px;
 }
-.menu__button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.meal-card__notif {
+  width: 0px;
+  height: 69px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99E2D0;
+  background-color: #99E2D0;
+  transition: width 400ms;
 }
-.menu__button {
-  width: 186px;
+.meal-card__notif-icon {
+  transform: scale(0);
+  font-size: 20px;
+  -webkit-text-fill-color: #FFFFFF;
+  color: #99E2D0;
+  transition: transform 400ms;
+}
+.meal-card:hover .meal-card__notif {
+  width: 59px;
+}
+.meal-card:hover .meal-card__notif-icon {
+  transform: scale(1);
 }
 
 /************************ FOOTER *************************/
