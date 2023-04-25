@@ -249,7 +249,6 @@ a {
         }
     }
 
-    // Rounded rectangles with howto steps //
     &__step {
         @extend %flex-justify-start;
 
@@ -451,6 +450,8 @@ a {
     margin-top: 220px;
 
     &__title-container {
+        white-space: nowrap;
+        overflow: hidden;
         padding: 32px 17px 42px 17px;
 
         @extend %flex-space-between;
@@ -465,6 +466,9 @@ a {
         font-size: 28px;
         font-weight: 400;
         font-family: 'Shrikhand';
+
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__like-icon {
@@ -523,27 +527,36 @@ a {
     border-radius: 15px;
     box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
 
-    h4 {
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 21px;
-    }
-
-    h5 {
-        font-size: 15px;
-        font-weight: 300;
-        line-height: 18px;
-    }
-
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         row-gap: 4px;
     
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 15px;
+        //margin: 12px 15px;
+        padding: 12px 0px 12px 15px;
+        margin-right: 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+    
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    
+        h5 {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 18px;
+    
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
     
     &__price-container {
