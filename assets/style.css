@@ -333,7 +333,7 @@ a {
   /* Transitions */
   transition: transform 200ms, box-shadow 400ms;
   /* Animations */
-  animation: card-enter 1000ms 3500ms both;
+  animation: card-enter 1000ms both;
 }
 @media (min-width: 769px) {
   .restaurant-card { /* Media query for tablets */
@@ -393,6 +393,18 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.restaurant-card.anim-step--1 {
+  animation-delay: 3750ms;
+}
+.restaurant-card.anim-step--2 {
+  animation-delay: 4000ms;
+}
+.restaurant-card.anim-step--3 {
+  animation-delay: 4250ms;
+}
+.restaurant-card.anim-step--4 {
+  animation-delay: 4500ms;
+}
 
 .notif {
   height: 29px;
@@ -418,6 +430,18 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
+  /* Animation */
+  animation: show-bg 1000ms both;
+}
+@keyframes show-bg {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
 
 .menu {
@@ -569,6 +593,9 @@ a {
 }
 .meal-card.anim-step--3 {
   animation-delay: 390ms;
+}
+.meal-card.anim-step--4 {
+  animation-delay: 520ms;
 }
 
 /************************ FOOTER *************************/

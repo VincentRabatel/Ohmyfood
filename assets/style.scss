@@ -418,7 +418,18 @@ a {
     }
 
     /* Animations */
-    animation: card-enter 1000ms $overlay-show-duration both;
+    animation: card-enter 1000ms both;
+
+    $card-count: 4; 
+    $card-delay: 250ms;
+
+    @for $i from 1 through $card-count {
+        &.anim-step{
+            &--#{$i} {
+                animation-delay: $overlay-show-duration + $i * $card-delay;
+            }
+        }
+    }
 }
 
 .notif {
@@ -451,6 +462,20 @@ a {
     z-index: -1;
     object-fit: cover;
     position: absolute;
+
+    /* Animation */
+    animation: show-bg 1000ms both;
+
+    @keyframes show-bg {
+        from { 
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to { 
+            opacity: 100%;
+            transform: translateY(0px);
+        }
+    }
 }
 
 .menu {
@@ -631,7 +656,7 @@ a {
     $card-count: 4; 
     $card-delay: 130ms;
     
-    @for $i from 1 to $card-count {
+    @for $i from 1 through $card-count {
         &.anim-step{
             &--#{$i} {
                 animation-delay: $i * $card-delay;
