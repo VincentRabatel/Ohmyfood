@@ -108,6 +108,98 @@ a {
 }
 
 
+/************************ Loader *************************/
+/*********************************************************/
+$content-show-duration: 3000ms;
+$content-hide-duration: 500ms;
+
+$overlay-show-duration: $content-show-duration + 500ms;
+$overlay-hide-duration: 1000ms;
+
+$circles-delay: 100ms;
+$circles-count: 5;
+
+.loader {
+    &__overlay {
+        width: 100vw;
+        height: 100vh;
+
+        z-index: 10;
+        position: fixed;
+
+        @extend %flex-center;
+        flex-direction: column;
+
+        background-color: $color-bg-third;
+
+        animation: hide $overlay-hide-duration $overlay-show-duration both;
+    }
+
+    &__content {
+        @extend %flex-center;
+        flex-direction: column;
+
+        animation: hide $content-hide-duration $content-show-duration both;
+    }
+
+    &__circles-container {
+        width: 200px;
+        position: relative;
+    }
+
+    &__circle {
+        width: 10px; height: 10px;
+        border-radius: 20px;
+
+        position: absolute;
+        transform-origin: 50% 50%;
+
+        background-color: $color-howto-main;
+
+        animation: circles-loop 1500ms infinite ease-in-out alternate;
+
+        @for $i from 1 through $circles-count {
+            &--#{$i} {
+              animation-delay: $i * $circles-delay;
+          }
+        }
+    }
+}
+
+@keyframes hide {
+    from { opacity: 100%; }
+    to { opacity: 0%; }
+}
+
+@keyframes circles-loop {
+    from { 
+        left: 0%;
+        opacity: 10%;
+        background-color: $color-blue-dark;
+    }
+
+    20% {
+        left: 0%;
+    }
+
+    50% {
+        opacity: 100%;
+        width: 15px; height: 15px;
+        background-color: $color-howto-main;
+    }
+
+    80% {
+        left: 100%;   
+    }
+
+    to {
+        left: 100%;
+        opacity: 10%;
+        background-color: $color-blue-dark;
+    }
+}
+
+
 /************************ HEADER *************************/
 /*********************************************************/
 .header {

@@ -1,6 +1,6 @@
 /*********************** GENERAL *************************/
 /*********************************************************/
-.meal-card__notif, .restaurants__notif-bloc, .howto__step-index, .geoloc, .header {
+.meal-card__notif, .restaurants__notif-bloc, .howto__step-index, .geoloc, .header, .loader__content, .loader__overlay {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +116,82 @@ a {
   font-family: "Shrikhand";
 }
 
+/************************ Loader *************************/
+/*********************************************************/
+.loader__overlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  flex-direction: column;
+  background-color: #EAEAEA;
+  animation: hide 1000ms 3500ms both;
+}
+.loader__content {
+  flex-direction: column;
+  animation: hide 500ms 3000ms both;
+}
+.loader__circles-container {
+  width: 200px;
+  position: relative;
+}
+.loader__circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  position: absolute;
+  transform-origin: 50% 50%;
+  background-color: #9356DC;
+  animation: circles-loop 1500ms infinite ease-in-out alternate;
+}
+.loader__circle--1 {
+  animation-delay: 100ms;
+}
+.loader__circle--2 {
+  animation-delay: 200ms;
+}
+.loader__circle--3 {
+  animation-delay: 300ms;
+}
+.loader__circle--4 {
+  animation-delay: 400ms;
+}
+.loader__circle--5 {
+  animation-delay: 500ms;
+}
+
+@keyframes hide {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+@keyframes circles-loop {
+  from {
+    left: 0%;
+    opacity: 10%;
+    background-color: #003A68;
+  }
+  20% {
+    left: 0%;
+  }
+  50% {
+    opacity: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: #9356DC;
+  }
+  80% {
+    left: 100%;
+  }
+  to {
+    left: 100%;
+    opacity: 10%;
+    background-color: #003A68;
+  }
+}
 /************************ HEADER *************************/
 /*********************************************************/
 .header {
