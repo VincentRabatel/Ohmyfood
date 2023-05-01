@@ -1,6 +1,4 @@
 /*********************** GENERAL *************************/
-/*********************************************************/
-
 @import './_statics';
 
 * {
@@ -17,7 +15,6 @@
 }
 
 body {
-    margin: 0;
     display: flex;
     flex-direction: column; // Reminder, this is needed for the z-index of the header box-shadow
 }
@@ -32,8 +29,6 @@ a {
 
 
 /*********************** COMMONS *************************/
-/*********************************************************/
-
 .main-button {
     height: 50px;
     cursor: pointer;
@@ -107,101 +102,19 @@ a {
     font-family: 'Shrikhand';
 }
 
-
-/************************ Loader *************************/
-/*********************************************************/
-$content-show-duration: 3000ms;
-$content-hide-duration: 500ms;
-
-$overlay-show-duration: $content-show-duration + 500ms;
-$overlay-hide-duration: 1000ms;
-
-$circles-delay: 100ms;
-$circles-count: 5;
-
-.loader {
-    &__overlay {
-        width: 100vw;
-        height: 100vh;
-
-        z-index: 10;
-        position: fixed;
-
-        @extend %flex-center;
-        flex-direction: column;
-
-        background-color: $color-bg-third;
-
-        animation: hide $overlay-hide-duration $overlay-show-duration both;
-    }
-
-    &__content {
-        @extend %flex-center;
-        flex-direction: column;
-
-        animation: hide $content-hide-duration $content-show-duration both;
-    }
-
-    &__circles-container {
-        width: 200px;
-        position: relative;
-    }
-
-    &__circle {
-        width: 10px; height: 10px;
-        border-radius: 20px;
-
-        position: absolute;
-        transform-origin: 50% 50%;
-
-        background-color: $color-howto-main;
-
-        animation: circles-loop 1500ms infinite ease-in-out alternate;
-
-        @for $i from 1 through $circles-count {
-            &--#{$i} {
-              animation-delay: $i * $circles-delay;
-          }
-        }
-    }
-}
-
-@keyframes hide {
-    from { opacity: 100%; }
-    to { opacity: 0%; z-index: -1; }
-}
-
-@keyframes circles-loop {
+/* Animations */
+@keyframes card-enter {
     from { 
-        left: 0%;
-        opacity: 10%;
-        background-color: $color-blue-dark;
+        opacity: 0;
+        top: -20px;
     }
-
-    20% {
-        left: 0%;
-    }
-
-    50% {
+    to { 
         opacity: 100%;
-        width: 15px; height: 15px;
-        background-color: $color-howto-main;
-    }
-
-    80% {
-        left: 100%;   
-    }
-
-    to {
-        left: 100%;
-        opacity: 10%;
-        background-color: $color-blue-dark;
+        top: 0px;
     }
 }
-
 
 /************************ HEADER *************************/
-/*********************************************************/
 .header {
     z-index: 1;
     height: 63px;
@@ -248,7 +161,6 @@ $circles-count: 5;
 
 
 /************************* MAIN **************************/
-/*********************************************************/
 .geoloc {
     z-index: 0;
     height: 50px;
@@ -311,7 +223,7 @@ $circles-count: 5;
 }
 
 
-/************************ HOWTO **************************/
+/************************ Howto **************************/
 .howto {
     background-color: $color-bg-main;
 
@@ -390,7 +302,7 @@ $circles-count: 5;
 }
 
 
-/********************* RESTAURANTS ***********************/
+/********************* Restaurants ***********************/
 .restaurants {
     padding-top: 54px;
     padding-bottom: 66px;
@@ -422,74 +334,80 @@ $circles-count: 5;
             row-gap: 50px;
         }
     }
+}
 
-    // Restaurants cards //
-    &__card {
-        height: 251px;
+.restaurant-card {
+    height: 251px;
 
-        color: $text-dark;
-        border-radius: 15px;
-        background-color: $color-bg-main;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    color: $text-dark;
+    border-radius: 15px;
+    background-color: $color-bg-main;
+    box-shadow: $box-shadow;
 
-        position: relative; // Reminder, this is needed for notification's position: absolute;
+    position: relative; // Reminder, this is needed for notification's position: absolute;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-        @media (min-width: 769px) { /* Media query for tablets */
-            width: 46%;
-        }
-
-        transition: transform 200ms, box-shadow 400ms;
-        &:hover {
-            transform: scale(1.01);
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-        }
+    @media (min-width: 769px) { /* Media query for tablets */
+        width: 46%;
     }
 
-    &__card-img {
+    &__img {
         height: 70%;
         border-radius: 15px 15px 0px 0px;
 
         object-fit: cover;
     }
 
-    &__card-content {
+    &__content {
         height: 30%;
         @extend %flex-space-between;
     }
 
-    &__card-text {
+    &__text {
         display: flex;
         flex-direction: column;
         row-gap: 3px;
         padding-left: 13px;
     }
 
-    &__card-title {
+    &__title {
         font-size: 18px;
         font-weight: 700;
     }
 
-    &__card-location {
+    &__location {
         font-size: 17px;
         font-weight: 300;
     }
 
-    &__card-icon {
+    &__icon {
         margin: 20px;
         font-size: 22px;
         cursor: pointer;
+    }
 
-        /* SCALE TRANSITION */
+    /* Transitions */
+    transition: transform 200ms, box-shadow 400ms;
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: $box-shadow--hover
+    }
+
+    &:active {
+        transform: translate(3px, 3px);
+    }
+
+    &__icon {
         transform: scale(1);
         @include hover-scale(1.1, 200ms);
         @include active-scale(0.95, 200ms);
 
         --fa-style: 400; // Font Awesome regular style
-        /* COLOR TRANSITIONS */
+
         &:hover {
             --fa-style: 900; // Font Awesome solid style
 
@@ -499,21 +417,23 @@ $circles-count: 5;
         }
     }
 
-    // New restaurant notification //
-    &__notif-bloc {
-        height: 29px;
-        border-radius: 2px;
+    /* Animations */
+    animation: card-enter 1000ms $overlay-show-duration both;
+}
 
-        position: absolute; // Reminder: the parent bloc need position: relative;
-        top: 13px; right: 13px;
+.notif {
+    height: 29px;
+    border-radius: 2px;
 
-        @extend %flex-center;
+    position: absolute; // Reminder: the parent bloc need position: relative;
+    top: 13px; right: 13px;
 
-        z-index: 1;
-        background-color: $color-notif-light;
-    }
+    @extend %flex-center;
 
-    &__notif-text {
+    z-index: 1;
+    background-color: $color-notif-light;
+
+    &__text {
         padding: 0px 11px;
 
         font-size: 14px;
@@ -523,7 +443,7 @@ $circles-count: 5;
 }
 
 
-/****************** RESTAURANTS PAGES ********************/
+/****************** Restaurants pages ********************/
 .restaurant-bg img{
     width: 100%;
     height: 275px;
@@ -617,7 +537,7 @@ $circles-count: 5;
     cursor: pointer;
     background-color: $color-bg-main;
     border-radius: 15px;
-    box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow;
 
     &__content {
         display: flex;
@@ -689,7 +609,7 @@ $circles-count: 5;
     &__notif-icon { transition: transform 400ms; }
 
     &:hover {
-        box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.2);
+        box-shadow: $box-shadow--hover;
 
         .meal-card__notif {
             width: 59px;
@@ -711,26 +631,17 @@ $circles-count: 5;
     $card-count: 4; 
     $card-delay: 130ms;
     
-    @for $i from 0 to $card-count {
-        &--#{$i} {
-          animation-delay: $i * $card-delay;
-      }
-    }
-
-    @keyframes card-enter {
-        from { 
-            opacity: 0;
-            top: -20px;
-        }
-        to { 
-            opacity: 100%;
-            top: 0px;
+    @for $i from 1 to $card-count {
+        &.anim-step{
+            &--#{$i} {
+                animation-delay: $i * $card-delay;
+            }
         }
     }
 }
 
+
 /************************ FOOTER *************************/
-/*********************************************************/
 .footer {
     color: $text-light;
     background-color: $color-bg-footer;
@@ -788,6 +699,89 @@ $circles-count: 5;
 }
 
 
+/************************ Loader *************************/
+.loader {
+    &__overlay {
+        width: 100vw;
+        height: 100vh;
+
+        z-index: 10;
+        position: fixed;
+
+        @extend %flex-center;
+        flex-direction: column;
+
+        background-color: $color-bg-third;
+
+        animation: loader-hide $overlay-hide-duration $overlay-show-duration both;
+    }
+
+    &__content {
+        @extend %flex-center;
+        flex-direction: column;
+
+        animation: loader-hide $content-hide-duration $content-show-duration both;
+    }
+
+    &__circles-container {
+        width: 200px;
+        position: relative;
+    }
+
+    &__circle {
+        width: 10px; height: 10px;
+        border-radius: 20px;
+
+        position: absolute;
+        transform-origin: 50% 50%;
+
+        background-color: $color-howto-main;
+
+        animation: loader-loop 1500ms infinite ease-in-out alternate;
+
+        @for $i from 1 through $loop-circles-count {
+            &--#{$i} {
+              animation-delay: $i * $loop-circles-delay;
+          }
+        }
+    }
+
+    @keyframes loader-hide {
+        from { opacity: 100%; }
+        to { opacity: 0%; z-index: -1; }
+    }
+    
+    @keyframes loader-loop {
+        from { 
+            left: 0%;
+            opacity: 10%;
+            background-color: $color-blue-dark;
+        }
+    
+        20% {
+            left: 0%;
+        }
+    
+        50% {
+            opacity: 100%;
+            width: 15px; height: 15px;
+            background-color: $color-howto-main;
+        }
+    
+        80% {
+            left: 100%;   
+        }
+    
+        to {
+            left: 100%;
+            opacity: 10%;
+            background-color: $color-blue-dark;
+        }
+    }
+}
+
+
+/******************** Media queries **********************/
 @media (min-width: 769px) { /* Media query for tablets */
 
 }

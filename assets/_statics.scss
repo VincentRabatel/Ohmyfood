@@ -1,6 +1,4 @@
 //////////////////////// VARIABLES ////////////////////////
-///////////////////////////////////////////////////////////
-
 // Background colors
 $color-bg-main: #FFFFFF;
 $color-bg-second: #F6F6F6;
@@ -32,10 +30,22 @@ $gradient-main-reverse--hover: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 
 // linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 // linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 
+// Shadows
+$box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+$box-shadow--hover: 0px 4px 15px rgba(0, 0, 0, 0.25);
+
+// Loader animation
+$content-show-duration: 3000ms;
+$content-hide-duration: 500ms;
+
+$overlay-show-duration: $content-show-duration + $content-hide-duration;
+$overlay-hide-duration: 1000ms;
+
+$loop-circles-delay: 100ms;
+$loop-circles-count: 5;
+
 
 /////////////////////// PLACEHODERS ///////////////////////
-///////////////////////////////////////////////////////////
-
 %flex-center {
     display: flex;
     align-items: center;
@@ -62,8 +72,6 @@ $gradient-main-reverse--hover: linear-gradient(180deg, #9356DC -11.44%, #FF79DA 
 
 
 ///////////////////////// MIXINS //////////////////////////
-///////////////////////////////////////////////////////////
-
 @mixin hover-scale($hs-value, $hs-duration) {
     transition: transform $hs-duration;
 
