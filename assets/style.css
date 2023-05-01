@@ -166,6 +166,7 @@ a {
   }
   to {
     opacity: 0%;
+    z-index: -1;
   }
 }
 @keyframes circles-loop {
@@ -551,7 +552,11 @@ a {
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 200ms;
+  /* Transitions */
+  transition: transform 200ms, box-shadow 200ms;
+  /* Animations */
+  position: relative;
+  animation: card-enter 1000ms both;
 }
 .meal-card__content {
   display: flex;
@@ -594,13 +599,17 @@ a {
   border-radius: 0px 15px 15px 0px;
   background-color: #99E2D0;
   background-color: #99E2D0;
-  transition: width 400ms;
 }
 .meal-card__notif-icon {
   transform: scale(0);
   font-size: 20px;
   -webkit-text-fill-color: #FFFFFF;
   color: #99E2D0;
+}
+.meal-card__notif {
+  transition: width 400ms;
+}
+.meal-card__notif-icon {
   transition: transform 400ms;
 }
 .meal-card:hover {
@@ -611,6 +620,31 @@ a {
 }
 .meal-card:hover .meal-card__notif-icon {
   transform: scale(1);
+}
+.meal-card:active {
+  transform: translate(3px, 3px);
+}
+.meal-card--0 {
+  animation-delay: 0ms;
+}
+.meal-card--1 {
+  animation-delay: 130ms;
+}
+.meal-card--2 {
+  animation-delay: 260ms;
+}
+.meal-card--3 {
+  animation-delay: 390ms;
+}
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+  to {
+    opacity: 100%;
+    top: 0px;
+  }
 }
 
 /************************ FOOTER *************************/

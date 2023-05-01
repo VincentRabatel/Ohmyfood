@@ -168,7 +168,7 @@ $circles-count: 5;
 
 @keyframes hide {
     from { opacity: 100%; }
-    to { opacity: 0%; }
+    to { opacity: 0%; z-index: -1; }
 }
 
 @keyframes circles-loop {
@@ -671,8 +671,6 @@ $circles-count: 5;
         border-radius: 0px 15px 15px 0px;
         background-color: $color-notif-light;
         background-color: #99E2D0;
-
-        transition: width 400ms;
     }
 
     &__notif-icon {
@@ -681,11 +679,14 @@ $circles-count: 5;
         font-size: 20px;
         -webkit-text-fill-color: $color-bg-main;
         color: $color-notif-light;
-
-        transition: transform 400ms;
     }
 
-    transition: box-shadow 200ms;
+    /* Transitions */
+    transition: transform 200ms, box-shadow 200ms;
+    
+    &__notif { transition: width 400ms; }
+
+    &__notif-icon { transition: transform 400ms; }
 
     &:hover {
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.2);
@@ -698,8 +699,35 @@ $circles-count: 5;
             transform: scale(1);
         }
     }
-}
 
+    &:active {
+        transform: translate(3px, 3px);
+    }
+
+    /* Animations */
+    position: relative;
+    animation: card-enter 1000ms both;
+
+    $card-count: 4; 
+    $card-delay: 130ms;
+    
+    @for $i from 0 to $card-count {
+        &--#{$i} {
+          animation-delay: $i * $card-delay;
+      }
+    }
+
+    @keyframes card-enter {
+        from { 
+            opacity: 0;
+            top: -20px;
+        }
+        to { 
+            opacity: 100%;
+            top: 0px;
+        }
+    }
+}
 
 /************************ FOOTER *************************/
 /*********************************************************/
