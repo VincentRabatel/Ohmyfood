@@ -34,15 +34,18 @@ a {
     height: 50px;
     cursor: pointer;
 
-    transform: scale(1);
-    @include hover-scale(1.02, 200ms);
-    @include active-scale(0.98, 200ms);
-
     background-image: $gradient-main;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);   
     border: none;
     border-radius: 25px;
     
+    @extend %flex-center;
+
+    /* Transitions */
+    transform: scale(1);
+    @include hover-scale(1.02, 200ms);
+    @include active-scale(0.98, 200ms);
+
     /* Create a second bg as a ::after pseudo-element */
     &::after {
         /* The property content: is needed, but left empty*/
@@ -268,6 +271,9 @@ a {
     text-align: center;
     padding-top: 39.5px;
     padding-bottom: 57px;
+
+    @extend %flex-center;
+    flex-direction: column;
 
     @media (min-width: 769px) { /* Media query for tablets */
         padding-top: 30px;
