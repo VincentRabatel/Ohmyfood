@@ -1,5 +1,5 @@
 /*********************** GENERAL *************************/
-.loader__content, .loader__overlay, .meal-card__notif, .notif, .howto__step-index, .geoloc, .header {
+.loader__content, .loader__overlay, .meal-card__notif, .howto__step-index, .geoloc, .header, .notif {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,12 +23,6 @@
   font-family: "Roboto";
 }
 
-.icon::before {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -42,16 +36,20 @@ a {
   text-decoration: none;
 }
 
+@media (min-width: 1080px) {
+  .desktop-container { /* Media query for desktops */
+    max-width: 1080px;
+    margin: auto;
+  }
+}
+
 /*********************** COMMONS *************************/
 .main-button {
   height: 50px;
   cursor: pointer;
-  /* SCALE TRANSITION */
   transform: scale(1);
   transition: transform 200ms;
   transition: transform 200ms;
-  /* COLOR TRANSITIONS */
-  /* Default style */
   background-image: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border: none;
@@ -101,19 +99,89 @@ a {
   padding: 0px 20px;
 }
 
-@media (min-width: 1080px) {
-  .desktop-container { /* Media query for desktops */
-    max-width: 1080px;
-    margin: auto;
-  }
-}
-
 .logo-ohmyfood {
   font-weight: 400;
   font-family: "Shrikhand";
 }
 
-/* Animations */
+.heart-icon {
+  position: relative;
+  height: 100%;
+  font-size: 21px;
+  cursor: pointer;
+  /* Animations */
+}
+.heart-icon::before {
+  opacity: 1;
+  position: absolute;
+  content: "\f004";
+  color: black;
+  font-weight: 400;
+}
+.heart-icon::after {
+  opacity: 0;
+  content: "\f004";
+  color: transparent;
+  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.heart-icon:hover {
+  animation: heart-clicked 400ms both;
+}
+.heart-icon:hover::before {
+  animation: heart-color-change 100ms reverse both;
+}
+.heart-icon:hover::after {
+  animation: heart-color-change 100ms both;
+}
+@keyframes heart-color-change {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heart-clicked {
+  from {
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+  5% {
+    transform: scale(0.9);
+    animation-timing-function: ease-in-out;
+  }
+  10% {
+    transform: translate(0px, 2px);
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    transform: scale(1.2) translate(0px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.notif {
+  height: 29px;
+  border-radius: 2px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 1;
+  background-color: #99E2D0;
+}
+.notif__text {
+  padding: 0px 11px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+
 @keyframes card-enter {
   from {
     opacity: 0;
@@ -363,10 +431,9 @@ a {
   font-size: 17px;
   font-weight: 300;
 }
-.restaurant-card__icon {
+.restaurant-card__heart-icon {
   margin: 20px;
   font-size: 22px;
-  cursor: pointer;
 }
 .restaurant-card:hover {
   transform: scale(1.01);
@@ -374,24 +441,6 @@ a {
 }
 .restaurant-card:active {
   transform: translate(3px, 3px);
-}
-.restaurant-card__icon {
-  transform: scale(1);
-  transition: transform 200ms;
-  transition: transform 200ms;
-  --fa-style: 400;
-}
-.restaurant-card__icon:hover {
-  transform: scale(1.1);
-}
-.restaurant-card__icon:active {
-  transform: scale(0.95);
-}
-.restaurant-card__icon:hover {
-  --fa-style: 900;
-  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .restaurant-card.anim-step--1 {
   animation-delay: 3750ms;
@@ -404,22 +453,6 @@ a {
 }
 .restaurant-card.anim-step--4 {
   animation-delay: 4500ms;
-}
-
-.notif {
-  height: 29px;
-  border-radius: 2px;
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  z-index: 1;
-  background-color: #99E2D0;
-}
-.notif__text {
-  padding: 0px 11px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #008766;
 }
 
 /****************** Restaurants pages ********************/
