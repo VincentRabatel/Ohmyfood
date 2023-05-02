@@ -292,7 +292,7 @@ a {
     padding-top: 35px;
   }
 }
-.headlines__button {
+.headlines .main-button {
   width: 218px;
   margin-top: 27px;
 }
@@ -538,7 +538,7 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.menu__button {
+.menu .main-button {
   width: 186px;
 }
 
